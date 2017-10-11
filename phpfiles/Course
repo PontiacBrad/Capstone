@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<?php
+$username = "root";
+$password = "";
+$hostname = "localhost"; 
+$dbname = "Course_Assessment";
+
+//connection to the database
+$dbhandle = mysqli_connect($hostname, $username, $password, $bdname)
+ or die("Unable to connect to MySQL");
+echo "Connected to MySQL";
+//select a database to work with
+$selected = mysql_select_db("Course_Assessment",$dbhandle)
+  or die("Could not select Course_Assessment");
+
+//execute the SQL query and return records
+$result = mysql_query("SELECT CourseID, CourseTitle, InstructorID FROM Course");
+
+//fetch tha data from the database
+while ($row = mysql_fetch_array($result)) {
+   echo "ID:".$row{'CourseID'}." Name:".$row{'CourseTitle'}."Instructor: ". //display the results
+   $row{'InstructorID'};
+}
+//close the connection
+mysql_close($dbhandle);
+?>
+<html>
+<head>
+<style>
+h1 {
+    text-align: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+</style>
+ 
+</head>
+<body>
+
+
+<h1>La Roche College</h1>
+<h1>Department of Chemistry</h1>
+<h1>Course Assessment Worksheet</h1>
+<h3>Select a Course
+
+
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">courses</button>
+  <div id="myDropdown" class="dropdown-content">
+
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div><h3>
+<h4> Course: 
+  <input type="text" name="Course"> <br>
+Course Title: 
+  <input type="text" name="CourseTitle"> <br>
+  Semester: 
+    <input type="text" name="Semester"> <br>
+ Instructor: 
+  <input type="text" name="Instructor"> <br>
+  </h4>
+
+<script>
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>
+

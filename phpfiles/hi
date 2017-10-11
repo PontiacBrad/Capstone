@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css" />
+<html>
+<title>CourseDropDown</title>
+<head>
+<form  method="post" action="CourseDropDown.php">
+<input type="hidden" name="submitted" value="true" />
+<script type="text/javascript" src="toggle.js"></script>
+</head>
+<body>
+<img src="background.jpeg" style="width:40%">
+<h2>Department of Chemistry</h2>
+<h2>Course Assessment Worksheet</h2>
+<h3>Select a Course
+<label>
+    <select name= "coursecode" onchange="this.form.submit()">
+    <option value="Select a Year/Sec">Select a Course</option>  
+<?php 
+include ('dropdown.php');
+?>
+</select>
+    </label>
+<?php
+include ('courseselect.php');
+?>
+</body> 
+</html>
+
+<script>
+    var count = 1;
+    function setColor(btn, color) {
+        var property = document.getElementById(btn);
+        if (count == 0) {
+            property.style.backgroundColor = "#FFFFFF"
+            count = 1;        
+        }
+        else {
+            property.style.backgroundColor = "#7FFF00"
+            count = 0;
+        }
+    }
+</script>
+<style>
+.button {
+    background-color: #B1BCBC;
+    border: 1px solid black;
+    border-radius: 8px;
+    color: black;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 150px;
+}
+</style>
+</head>
+
+<body>
+
+<input type="button" id="button" value = "button" style= "color:black" onclick="setColor('button', '#101010')";/>
+
+<input type="button" id="button2" value = "button" style= "color:black" onclick="setColor('button2', '#101010')";/>
+</body>
+</html>
