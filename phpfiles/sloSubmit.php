@@ -7,4 +7,4 @@ $sqlinsert = "INSERT INTO Course_SLOs (CourseSLOID, CourseID, SLOID) VALUES ('$I
         if(!mysqli_query($conn,$sqlinsert)){
             die('error inserting');
         }
-?>
+?>  
