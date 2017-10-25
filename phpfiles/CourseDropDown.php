@@ -5,18 +5,54 @@
 <head>
 <form  method="post" action="CourseDropDown.php">
 <input type="hidden" name="submitted" value="true" />
-<script type="text/javascript" src="toggle.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type = "text/javascript" src = "jquery.js"></script>
 <script src="js/libs/jquery.min.js" type="text/javascript"></script>
    <script type="text/javascript">
     function setColor(btn, color) {
         var property = document.getElementById(btn);
         if (property.style.backgroundColor == "rgb(127, 255, 0)") {
-            property.style.backgroundColor = "#FFFFFF"        
+            property.style.backgroundColor = "#FFFFFF"    
         }
         else {
             property.style.backgroundColor = "#7FFF00"
         }
     }
+</script>
+<script type="text/javascript">
+function sloSubmit()
+{
+var property = document.getElementById('button1');
+if (property.style.backgroundColor == "rgb(127, 255, 0)") {
+var SLO1 = true; } else{var SLO1 = false;}
+var property = document.getElementById('button2');
+if (property.style.backgroundColor == "rgb(127, 255, 0)") {
+var SLO2 = true; } else{var SLO2 = false;}
+var property = document.getElementById('button3');
+if (property.style.backgroundColor == "rgb(127, 255, 0)") {
+var SLO3 = true; } else{var SLO3 = false;}
+var property = document.getElementById('button4');
+if (property.style.backgroundColor == "rgb(127, 255, 0)") {
+var SLO4 = true; } else{var SLO4 = false;}
+var property = document.getElementById('button5');
+if (property.style.backgroundColor == "rgb(127, 255, 0)") {
+var SLO5 = true; } else{var SLO5 = false;}
+$.post("sloSubmit.php",
+        {
+        postSLO1: SLO1,
+	postSLO2: SLO2,
+	postSLO3: SLO3,	
+	postSLO4: SLO4,
+	postSLO5: SLO5,
+        },
+        function(data){
+          my_function(data);
+        });
+
+function my_function(data)
+{
+}
+}
 </script>
 <style>
 .button {
@@ -58,15 +94,7 @@ include ('courseselect.php');
 <input type="button" id="button4" value = "Societal Connects" class='button' style= "color:black" onclick="setColor('button4', '#101010')";/>
 <input type="button" id="button5" value = "Capstone" class='button' style= "color:black" onclick="setColor('button5', '#101010')";/>
 </div>
-<input type="button" id="slobutton" value = "SLO submit" class='button' style= "color:black" onclick="sloSubmit";/>
+<input type="button" id="slobutton" value = "SLO submit" class='button' style= "color:black" onclick="sloSubmit()";/>
 </body> 
 </html>
-<script>
-function sloSubmit()
-{
-<?php
-include ('sloSubmit.php');
-?>
-}
-</script>
-  
+
