@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 07, 2017 at 10:03 PM
+-- Generation Time: Oct 25, 2017 at 05:05 AM
 -- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.8
+-- PHP Version: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `Cap_Dev_Run`
+-- Database: `Course_Assessment`
 --
 
 -- --------------------------------------------------------
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `Course_Assessment_Form_Section_1` (
-  `CAFS1ID` varchar(255) NOT NULL,
+  `CAFS1ID` int(11) NOT NULL,
   `NewSLOs` longblob NOT NULL,
   `Upgrades` longblob NOT NULL,
   `Enhancements` longblob NOT NULL,
@@ -41,9 +41,7 @@ CREATE TABLE `Course_Assessment_Form_Section_1` (
 -- Dumping data for table `Course_Assessment_Form_Section_1`
 --
 
-INSERT INTO `Course_Assessment_Form_Section_1` (`CAFS1ID`, `NewSLOs`, `Upgrades`, `Enhancements`, `Modifications`, `Other`) VALUES
-('CHEM2016-SPR2017', 0x37363538373635383736, 0x3736383736383937363839, 0x3738363938373639383736, 0x37363938373639383736, 0x38373039383736303837363837);
-COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

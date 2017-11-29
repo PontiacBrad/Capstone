@@ -4,11 +4,12 @@
         <link rel="stylesheet" type="text/css" href="CSS/ILRCSS.css">
         <title>ILR Form</title>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="JS/DisplayStudentProfilePicture.js"></script>
         <script src="JS/ShowOtherMajorField.js"></script>
         <script src="JS/RetrieveStudentInfoById.js"></script>
-        <script src="JS/formSubmit.js"></script>
-
+        <script src="JS/showOtherInternationalField.js"></script>
+        <script src="JS/studentAthleticsDisplay.js"></script>
     </head>
     <body>
         <!-- top navigation -->
@@ -26,22 +27,21 @@
 
 
         <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'Student-Information-Form')">Biographical Information</button>
-        <button class="tablinks" onclick="openTab(event, 'AdmissionsPlacementInfo')">Admissions Placement</button>
+        <button class="tablinks" id="default-open" onclick="openTab(event, 'Student-Information-Form')">Biographical Information & Admissions Placement Info</button>
         <button class="tablinks" onclick="openTab(event, 'MiscNotes')">Miscelaneous Notes</button>
         </div>
 
         <!-- TABS -->
         <?php
-        include "View/Templates/HTMLmodules/ILRStudent-Information-Form.html";
-        include "View/Templates/HTMLmodules/ILRAdmissionsPlacementInfo.html";
         include "View/Templates/HTMLmodules/ILRMiscNotes.html";
+        include "View/Templates/HTMLmodules/ILRStudent-Information-Form.html";
         ?>
         <!-- END TABS -->
         <script src="JS/openTabs.js"></script>
-    <body>
+    </body>
 
-<html>
+</html>
 <?php
     include "Controller/Independent-Learning-Record-Controllers/Independent-Learning-Record-Student-Data-Input.php";
+    include "Controller/Independent-Learning-Record-Controllers/Independent-Learning-Record-Student-MiscNotes-Input.php";
 ?>

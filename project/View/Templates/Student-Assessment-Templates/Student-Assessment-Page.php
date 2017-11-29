@@ -14,6 +14,7 @@
 
         <script type="text/javascript" src="JS/SetSLOButtonColor.js"></script>
         <script type="text/javascript" src="JS/SubmitSLOInformation.js"></script>
+	<script type="text/javascript" src="JS/updateGrades.js"></script>
 
 </head>
 <body>

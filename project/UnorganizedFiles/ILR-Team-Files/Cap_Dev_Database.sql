@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 07, 2017 at 05:13 AM
+-- Generation Time: Oct 26, 2017 at 12:30 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -97,16 +97,6 @@ CREATE TABLE IF NOT EXISTS `Course_Assessment_Form_Section_1` (
 
 INSERT INTO `Course_Assessment_Form_Section_1` (`CAFS1ID`, `NewSLOs`, `Upgrades`, `Enhancements`, `Modifications`, `Other`) VALUES
 (11111, 0x4e6f6e65, 0x4e6f6e65, 0x4e6f6e65, 0x4e6f6e65, 0x48656c6c6f),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
-(0, '', '', '', '', ''),
 (0, '', '', '', '', '');
 
 -- --------------------------------------------------------
@@ -131,10 +121,8 @@ CREATE TABLE IF NOT EXISTS `Course_SLOs` (
 --
 
 INSERT INTO `Course_SLOs` (`CourseSLOID`, `CourseID`, `SLO1`, `SLO2`, `SLO3`, `SLO4`, `SLO5`) VALUES
-(225564, '04', 'false', 'true', 'true', 'false', 'false'),
 (387684, '', 'false', 'true', 'true', 'false', 'false'),
-(837367, '', 'true', 'true', 'false', 'false', 'false'),
-(928525, 'CSCI4098', 'false', 'true', 'true', 'false', 'false');
+(837367, '', 'true', 'true', 'false', 'false', 'false');
 
 -- --------------------------------------------------------
 
@@ -197,7 +185,6 @@ CREATE TABLE IF NOT EXISTS `Student` (
   `Student_Semester` varchar(32) NOT NULL,
   `Student_Date` datetime DEFAULT NULL,
   `Student_Photo` varchar(255) DEFAULT NULL,
-  `Student_Notes` longtext NOT NULL,
   PRIMARY KEY (`Student_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -205,14 +192,36 @@ CREATE TABLE IF NOT EXISTS `Student` (
 -- Dumping data for table `Student`
 --
 
-INSERT INTO `Student` (`Student_ID`, `Student_Name`, `Student_Major`, `Student_Year`, `Student_Semester`, `Student_Date`, `Student_Photo`, `Student_Notes`) VALUES
-(111111, 'Abdullah Almusallam', 'CS', '2016', 'Summer', '2017-11-06 18:00:51', '', 'This is Abdullah and johnny'),
-(112211, 'test100', 'CS', '2016', 'Summer', '2017-11-06 18:39:56', '', ''),
-(123456, 'test2', 'CS', '2015', 'Spring', '2017-11-06 18:38:44', '', ''),
-(131213, 'test3', 'Biochemistry', '2016', 'Summer', '2017-11-06 03:16:59', 'Controller/Independent-Learning-Record-Controllers/Student-Photos/test3/chemistry_logo.png', 'New notes'),
-(131221, 'test100', 'Biochemistry', '2014', 'Fall', '2017-11-06 02:20:07', '', 'kgldfgdfgdf'),
-(888888, 'Johnny Nicholson', 'Chemistry', '2014', 'Fall', '2017-11-06 19:20:53', '', ''),
-(999999, 'Hey there', 'Chemistry', '2014', 'Fall', '2017-11-06 19:23:57', '', '');
+INSERT INTO `Student` (`Student_ID`, `Student_Name`, `Student_Major`, `Student_Year`, `Student_Semester`, `Student_Date`, `Student_Photo`) VALUES
+(10101, 'Jason Man', 'Chemistry', '', 'Fall', '2017-10-23 05:32:52', NULL),
+(20202, 'yummy 2', 'Chemistry', '2014', 'Fall', '2017-10-23 21:52:33', 'studentPhotos/download.jpeg'),
+(101010, 'Sun Man', 'Chemistry', 'Freshman', 'Summer', '2017-10-23 05:19:31', NULL),
+(111111, 'Sam Smith', 'Mathematics', 'Sophomore', 'Summer', '2017-10-11 22:56:17', NULL),
+(112233, 'George Lucas', 'Chemistry', 'Freshman', 'Fall', '2017-10-20 18:08:07', NULL),
+(121212, 'hey there', 'Chemistry', 'Freshman', 'Fall', '2017-10-20 20:36:27', NULL),
+(123456, 'John Nicholson', 'Biochemistry', 'Senior', 'Spring', '2017-10-10 19:04:19', NULL),
+(212121, 'Blah', 'Chemistry', '2014', 'Fall', '2017-10-23 21:43:19', 'studentPhotos/download.jpeg'),
+(222222, 'Jon Snow', 'Biochemistry', 'Senior', 'Fall', '2017-10-11 00:00:00', NULL),
+(223344, 'Sunglass Sam', 'Chemistry', 'Senior', 'Fall', '2017-10-21 20:29:06', NULL),
+(232323, 'hey hey', 'Chemistry', '2014', 'Fall', '2017-10-23 21:23:16', NULL),
+(323232, 'Joe Smith', 'Chemistry', 'Freshman', 'Fall', '2017-10-11 22:59:06', NULL),
+(332211, 'Harvey Daniels', 'Chemistry', 'Junior', 'Fall', '2017-10-20 20:34:15', NULL),
+(333333, 'yummy', 'Chemistry', '2014', 'Fall', '2017-10-23 21:48:13', 'studentPhotos/download.jpeg'),
+(373827, 'Matt Simons', 'Biochemistry', 'Freshman', 'Fall', '2017-10-11 22:53:46', NULL),
+(443322, 'Sam Sunglasses', 'Biochemistry', 'Junior', 'Spring', '2017-10-21 20:31:31', NULL),
+(474747, 'Freddy Manson', 'Dance', '2016', 'Summer', '2017-10-24 16:20:15', ''),
+(525252, 'Nick Jonson', 'Chemistry', '2016', 'Fall', '2017-10-23 21:31:24', NULL),
+(555555, 'Nick Jonson', 'Chemistry', '2016', 'Fall', '2017-10-23 05:39:36', NULL),
+(626262, 'Gary Jones', 'Chemistry', '2014', 'Fall', '2017-10-23 21:37:31', ''),
+(666666, 'Nathan Man', 'Biochemistry', 'Senior', 'Spring', '2017-10-21 20:33:46', NULL),
+(747474, 'Gregory Smith', 'Chemistry', '2014', 'Fall', '2017-10-24 16:30:58', 'studentPhotos/13268503_1204199139590434_5383854862668333667_o.jpg'),
+(765432, 'Billy Poop', 'Biochemistry', '2014', 'Fall', '2017-10-24 20:38:12', 'studentPhotos/13268503_1204199139590434_5383854862668333667_o.jpg'),
+(767676, 'hey there', 'Chemistry', '2014', 'Fall', '2017-10-23 21:25:23', NULL),
+(787878, 'hey hey', 'Chemistry', '2014', 'Fall', '2017-10-23 21:29:15', NULL),
+(865432, 'Johnny Nicholson', 'Math', '2014', 'Fall', '0000-00-00 00:00:00', 'studentPhotos/13268503_1204199139590434_5383854862668333667_o.jpg'),
+(878787, 'hey hey', 'Chemistry', '2014', 'Fall', '2017-10-23 21:30:22', NULL),
+(888888, 'jan jan', 'Chemistry', '2014', 'Fall', '2017-10-23 18:34:25', NULL),
+(999999, 'Huckle Finn', 'Chemistry', '2017', 'Fall', '2017-10-23 05:43:19', NULL);
 
 -- --------------------------------------------------------
 
@@ -232,8 +241,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`) VALUES
-(3, 'Abdullah@test.com', '6afd8707350fc31ca57a204757757a71'),
-(4, 'test@test.com', 'f5183be9aa9e17875c6994340f0c738c');
+(1, 'johnfnicholson123@gmail.com', '921f1def9069b154fe0fd0a5424585ba'),
+(2, 'dadada@hello.com', 'dbfdedaa2354ca67413f9db0dcb018db');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
